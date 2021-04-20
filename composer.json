@@ -1,24 +1,28 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "vicenterusso/laravel-magic-date-mutator",
+    "description": "Try to auto convert date formats before mutate",
     "keywords": [
-        ":vendor_name",
+        "VRusso",
         "laravel",
-        "package_slug"
+        "date",
+        "convert",
+        "mutator",
+        "laravel_magic_date_mutator"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/vicenterusso/laravel-magic-date-mutator",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Vicente Russo",
+            "email": "vicente.russo@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.0",
-        "spatie/laravel-package-tools": "^1.4.3",
-        "illuminate/contracts": "^8.0"
+        "php": "^7.2|^8.0",
+        "illuminate/contracts": "^8.0",
+        "nesbot/carbon": "^2.46",
+        "spatie/laravel-package-tools": "^1.4.3"
     },
     "require-dev": {
         "brianium/paratest": "^6.2",
@@ -30,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "VRusso\\MagicDateMutator\\": "src",
+            "VRusso\\MagicDateMutator\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "VRusso\\MagicDateMutator\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,10 +54,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "VRusso\\MagicDateMutator\\MagicDateMutatorServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "MagicDateMutator": "VRusso\\MagicDateMutator\\MagicDateMutatorFacade"
             }
         }
     },
