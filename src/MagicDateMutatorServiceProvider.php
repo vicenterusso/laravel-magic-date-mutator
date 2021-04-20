@@ -1,6 +1,6 @@
 <?php
 
-namespace Vrusso\MagicDateMutator;
+namespace VRusso\MagicDateMutator;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
