@@ -17,6 +17,5 @@ class MagicDateMutatorServiceProvider extends PackageServiceProvider
         $package
             ->name('magic_date_mutator')
             ->hasConfigFile('magic_date_mutator');
-
     }
 }

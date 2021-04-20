@@ -6,7 +6,6 @@ use Carbon\Carbon;
 
 trait DateAutoMutator
 {
-
     use \VRusso\TableStructure\Traits\FieldsInfo;
 
     private static $date_fields;
@@ -23,18 +22,17 @@ trait DateAutoMutator
     private function isDate($field) : bool
     {
         self::$date_fields = self::$date_fields ?: get_called_class()::getAllFieldsWithTypeOf('date');
+
         return in_array($field, self::$date_fields);
     }
 
     public function setAttribute($key, $value)
     {
         //@TODO: add datetime conversion
-        if($this->isDate($key)) {
-
+        if ($this->isDate($key)) {
             $common_formats = ['d/m/Y','d-m-Y','Y-m-d'];
-            foreach($common_formats as $format)
-            {
-                if(Carbon::canBeCreatedFromFormat($value, $format)) {
+            foreach ($common_formats as $format) {
+                if (Carbon::canBeCreatedFromFormat($value, $format)) {
                     $value = Carbon::createFromFormat($format, $value)->format(self::$database_format);
                 }
             }
@@ -59,5 +57,4 @@ trait DateAutoMutator
 //
 //        return $value;
 //    }
-
 }
